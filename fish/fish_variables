@@ -2,12 +2,9 @@
 # VERSION: 3.0
 SETUVAR --export BAT_THEME:my_gruvbox
 SETUVAR --export COLORTERM:truecolor
-SETUVAR FISH_CONFIG:/home/ryuryu/\x2econfig/fish/config\x2efish
 SETUVAR --export MANPAGER:sh\x20\x2dc\x20\x27col\x20\x2dbx\x20\x7c\x20bat\x20\x2dl\x20man\x20\x2dp\x27
 SETUVAR --export PYENV_ROOT:/home/ryuryu/\x2epyenv
-SETUVAR STUDY:/mnt/c/Users/RyuRyu/OneDrive\x20\x2d\x20Kyoto\x20University/study
 SETUVAR --export TERM:tmux\x2d256color
-SETUVAR --export WHOME:/mnt/c/Users/RyuRyu
 SETUVAR __fish_initialized:3400
 SETUVAR fish_color_autosuggestion:brblack
 SETUVAR fish_color_cancel:\x2dr
