@@ -1,5 +1,9 @@
 if status is-interactive
   # Commands to run in interactive sessions can go here
+
+  set WHOME (powershell.exe -Command 'echo $env:HOMEDRIVE$env:HOMEPATH' | tr -d "\r\n")
+  set WHOME (wslpath -u $WHOME)
+
   alias rm='rm -i'
   alias cp='cp -i'
   alias mv='mv -i'
@@ -8,6 +12,9 @@ if status is-interactive
   alias ls='exa --git-ignore --icons'
   alias la='exa -a --icons'
   alias lt='exa -T --git-ignore --icons'
+  alias sumatra=$WHOME/AppData/Local/SumatraPDF/SumatraPDF.exe
+
+  trash-empty 28
 
   if test -z $TMUX
     set count 0
@@ -37,5 +44,3 @@ if status is-interactive
     end
   end
 end
-
-trash-empty 28

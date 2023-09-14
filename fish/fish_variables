@@ -36,4 +36,4 @@ SETUVAR fish_pager_color_description:yellow
 SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
-SETUVAR fish_user_paths:/home/ryuryu/\x2ecargo/bin\x1e/home/ryuryu/\x2epyenv/bin\x1e/home/linuxbrew/\x2elinuxbrew/sbin\x1e/home/linuxbrew/\x2elinuxbrew/bin\x1e/home/linuxbrew/\x2elinuxbrew/opt/fzf/bin
+SETUVAR fish_user_paths:/home/ryuryu/\x2elocal/bin\x1e/home/ryuryu/\x2ecargo/bin\x1e/home/ryuryu/\x2epyenv/bin\x1e/home/linuxbrew/\x2elinuxbrew/sbin\x1e/home/linuxbrew/\x2elinuxbrew/bin\x1e/home/linuxbrew/\x2elinuxbrew/opt/fzf/bin

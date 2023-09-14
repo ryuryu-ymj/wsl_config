@@ -48,6 +48,8 @@ vim.opt.showmode = false
 vim.opt.expandtab = true
 -- 自動挿入されるインデント幅を指定
 vim.opt.shiftwidth = 4
+-- タブ文字を4文字文の幅で表示
+vim.opt.tabstop = 4
 -- タブキーで指定した数，空白が挿入される
 vim.opt.softtabstop = 4
 

@@ -94,15 +94,15 @@ return {
             vim.keymap.set('n', '<Leader>dl', vim.diagnostic.setloclist, opts)
 
             -- Set diagnostics signs
-            local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+            local signs = { Error = "󰅙 ", Warn = "󰀦 ", Hint = "󰌶 ", Info = "󰋽 " }
             for type, icon in pairs(signs) do
                 local hl = "DiagnosticSign" .. type
                 vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
             end
 
             local handlers = {
-                -- ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" }),
-                -- ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" }),
+                ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" }),
+                ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" }),
             }
 
             require('lspconfig')['lua_ls'].setup {
@@ -142,10 +142,44 @@ return {
                 }
             }
 
+            -- for markdown
             require('lspconfig')['marksman'].setup {
                 -- on_attach = on_attach,
                 capabilities = capabilities,
                 handlers = handlers,
+            }
+
+            -- for latex
+            require('lspconfig')['texlab'].setup {
+                on_attach = on_attach,
+                capabilities = capabilities,
+                handlers = handlers,
+            }
+
+            -- for python
+            require('lspconfig')['pylsp'].setup {
+                on_attach = on_attach,
+                capabilities = capabilities,
+                handlers = handlers,
+                settings = {
+                    pylsp = {
+                        plugins = {
+                            autopep8 = {
+                                enabled = false
+                            },
+                            yapf = {
+                                enabled = false
+                            },
+                            flake8 = {
+                                enabled = true,
+                                ignore = { "E501" },
+                            },
+                            pycodestyle = {
+                                ignore = { "E501" },
+                            },
+                        }
+                    }
+                }
             }
         end,
     },
@@ -161,6 +195,7 @@ return {
                     nl.builtins.formatting.prettier.with {
                         disabled_filetypes = { 'markdown' },
                     },
+                    nl.builtins.formatting.black,
                 },
                 on_attach = on_attach,
             }

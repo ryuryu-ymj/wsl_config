@@ -64,6 +64,7 @@ return {
             'hrsh7th/cmp-path',
             'hrsh7th/cmp-cmdline',
             'saadparwaiz1/cmp_luasnip',
+            -- 'hrsh7th/cmp-omni',
             {
                 'uga-rosa/cmp-dictionary',
                 config = function()
@@ -133,6 +134,7 @@ return {
                     { name = 'luasnip' }, -- For luasnip users.
                     -- { name = 'ultisnips' }, -- For ultisnips users.
                     -- { name = 'snippy' }, -- For snippy users.
+                    -- { name = 'omni' },
                 }, {
                     { name = 'buffer' },
                 }, {
@@ -239,7 +241,7 @@ return {
             npairs.get_rule('{')
                 :with_pair(cond.not_before_text('\\'))
             npairs.add_rules({
-                rule('$', '$', "markdown")
+                rule('$', '$', { "markdown", "tex" })
                     :with_pair(cond.not_after_regex('[^ \\t\\r\\n,.]', 1))
                     :with_move(function(opts)
                         return opts.next_char == opts.char
