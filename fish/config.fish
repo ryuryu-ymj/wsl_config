@@ -9,9 +9,9 @@ if status is-interactive
   alias mv='mv -i'
   alias tp='trash-put'
   alias crontab='crontab -i'
-  alias ls='exa --git-ignore --icons'
-  alias la='exa -a --icons'
-  alias lt='exa -T --git-ignore --icons'
+  alias ls='eza --git-ignore --icons'
+  alias la='eza -a --icons'
+  alias lt='eza -T --git-ignore --icons'
   alias sumatra=$WHOME/AppData/Local/SumatraPDF/SumatraPDF.exe
 
   trash-empty 28
