@@ -89,13 +89,15 @@ return {
 
     -- {
     --     'toppair/peek.nvim',
+    --     event = { "VeryLazy" },
     --     build = 'deno task --quiet build:fast',
     --     config = function()
     --         require('peek').setup {
     --             syntax = false,
-    --             app = { 'chrome.exe', '--new-window' },
+    --             app = { 'chrome.exe', '--app=' },
+    --             -- app = { 'google-chrome' }
+    --             -- app = { 'wslview' }
     --         }
-    --
     --         vim.api.nvim_create_user_command('PeekOpen', require('peek').open, {})
     --         vim.api.nvim_create_user_command('PeekClose', require('peek').close, {})
     --     end,
@@ -111,11 +113,12 @@ return {
         config = function()
             vim.cmd [[
             function! OpenMarkdownPreview(url)
-                execute "silent ! open -na 'Google Chrome' --args --app=" .. a:url .. "&"
+                execute "silent ! chrome.exe --app=" .. a:url .. "&"
             endfunction
             ]]
             vim.g.mkdp_browserfunc = 'OpenMarkdownPreview'
-            -- vim.g.mkdp_browser = '/mnt/c/Program Files/Google/Chrome/Application'
+            -- vim.g.mkdp_browser = '/mnt/c/Users/ryuryu/AppData/Local/Google/Chrome/Application/chrome.exe'
+            -- vim.g.mkdp_browser = 'google-chrome'
         end,
     },
 }
