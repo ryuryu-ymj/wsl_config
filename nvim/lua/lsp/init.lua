@@ -90,6 +90,8 @@ local lsp_list = {
     "julials",
     -- C, C++
     "clangd",
+    -- Go,
+    "gopls",
     -- Typst
     "tinymist",
 }

@@ -65,6 +65,11 @@ vim.keymap.set({ 'n', 'x' }, 's', 'd')
 vim.keymap.set('n', 'ss', 'dd')
 vim.keymap.set('n', 'S', 'D')
 
+-- incremental selection
+vim.keymap.set('n', '<C-s>', ':normal van<CR>')
+vim.keymap.set('v', '<C-s>', function()
+  vim.api.nvim_feedkeys('an', 'v', false)
+end)
 
 -- gJでスペースなしの行結合
 -- vim.cmd [[
